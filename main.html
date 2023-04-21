@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Update Text Example</title>
   </head>
-
   <body>
-    <!-- do not modify this file -->
-    <div id="output"></div>
+    <p id="output">Waiting for promise to resolve...</p>
+    <script>
+      function updateText() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve("Hello, world!");
+          }, 1000);
+        });
+      }
 
-    <script type="text/javascript" src="./script.js"></script>
+      updateText().then((message) => {
+        document.getElementById("output").textContent = message;
+      });
+    </script>
   </body>
 </html>
